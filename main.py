@@ -49,6 +49,9 @@ def guardar_datos():
         messagebox.showwarning("Advertencia", "Fecha, Nro de Punto de Venta, Nro Comprobante, Cuit, Monto Neto,"
                                               " Iva y total deben ser numeros")
         return
+    ws.append([fecha, comprobante, venta, n_comprobante, r_social, cuit, m_neto, iva, total])
+    wb.save('client.xlsx')
+    messagebox.showinfo("Informacion", "Datos guardados con exito")
 
 
 
