@@ -38,6 +38,8 @@ def guardar_datos():
         return
     print("¡Todos los campos están llenos!")
 
+    # Verificacion de que todos los campos esten completos con sus datos correspondientes, impidiendo que el usuario
+    # coloque letras en lugar de numeros en campos incorrectos.
     try:
         venta = int(venta)
         n_comprobante = int(n_comprobante)
@@ -53,9 +55,21 @@ def guardar_datos():
     wb.save('client.xlsx')
     messagebox.showinfo("Informacion", "Datos guardados con exito")
 
+    #Limpiamos los datos una vez el usuario dat al boton de agregar.
+    entry_fecha.delete(0, tk.END)
+    entry_comprobante.delete(0, tk.END)
+    entry_venta.delete(0, tk.END)
+    entry_NComprobante.delete(0, tk.END)
+    entry_RSocial.delete(0, tk.END)
+    entry_Cuit.delete(0, tk.END)
+    entry_Neto.delete(0, tk.END)
+    entry_Iva.delete(0, tk.END)
+    entry_Total.delete(0, tk.END)
 
 
 
+
+# Estilos de la app
 root = tk.Tk()
 root.title("Formulario de entrada de Datos")
 root.configure(bg='#4B6587')
